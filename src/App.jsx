@@ -9,7 +9,7 @@ function App() {
 
   function handleClick(featPupId) {
     // some logic here
-    const featuredPup = puppies.find((pup)=> pup.id === featPupId)
+    featPupId = puppies.find((pup)=> pup.id === featPupId)
     console.log("clicked");
   }
   console.log("puppyList: ", puppyList);
@@ -25,10 +25,10 @@ function App() {
       </div>
       {featPupId && (
         <div>
-          <h2>{featuredPup.name}</h2>
+          <h2>{featPupId.name}</h2>
           <ul>
-            <li>Age: {featuredPup.age}</li>
-            <li>Email: {featuredPup.email}</li>
+            <li>Age: {featPupId.age}</li>
+            <li>Email: {featPupId.email}</li>
           </ul>
         </div>
       )}
