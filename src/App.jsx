@@ -9,17 +9,20 @@ function App() {
 
   function handleClick(featPupId) {
     // some logic here
-    featPupId = puppies.find((pup)=> pup.id === featPupId)
-    console.log("clicked");
+    console.log("featPupId: ", featPupId);
+    setFeatPupId(puppies.find((pup)=> pup.id === featPupId));
   }
-  console.log("puppyList: ", puppyList);
 
   return (
     <>
       <div className="App">
       {
         puppies.map((puppy) => {
-             return <p onClick={handleClick(puppy)} key={puppy.id}>{puppy.name}</p>;
+             return (
+             <p onClick={()=>{ handleClick(puppy.id)}} 
+                key={puppy.id}>
+                  {puppy.name}
+              </p>);
            })
        }
       </div>
